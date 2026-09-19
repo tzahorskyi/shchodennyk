@@ -1,0 +1,283 @@
+- main [ref=e3]:
+  - generic [ref=e15]:
+    - generic [ref=e21]:
+      - generic [ref=e22]: Щоденник
+      - generic [ref=e23]: майстерня адміністратора
+    - generic [ref=e24]:
+      - button "Скопіювати гостьове посилання" [ref=e25] [cursor=pointer]
+      - button "Вийти" [ref=e26] [cursor=pointer]
+  - navigation "Розділи адміністратора" [ref=e29]:
+    - button "Перегляд і ДЗ" [ref=e30] [cursor=pointer]
+    - button "Імпорт PDF" [ref=e34] [cursor=pointer]
+  - main [ref=e812]:
+    - region [ref=e813]:
+      - button "Попередній тиждень" [ref=e814] [cursor=pointer]
+      - generic [ref=e817]:
+        - paragraph [ref=e818]: верхній тиждень
+        - heading "14 вересня — 18 вересня" [level=1] [ref=e819]
+      - button "Наступний тиждень" [ref=e820] [cursor=pointer]
+    - generic [ref=e823]:
+      - article [ref=e834]:
+        - generic [ref=e835]:
+          - generic [ref=e836]: Понеділок
+          - time [ref=e837]: 14 вересня
+        - generic [ref=e838]:
+          - article [ref=e839]:
+            - generic "5 пара" [ref=e840]: "5"
+            - generic [ref=e841]:
+              - generic [ref=e842]:
+                - heading "Маркетинг в агробізнесі" [level=2] [ref=e843]
+                - generic [ref=e844]: В п
+              - generic [ref=e845]:
+                - generic [ref=e846]: 14:30–15:45
+                - generic [ref=e850]: 1 353-
+                - generic [ref=e854]: проф. Єранкін О.О
+              - button "Домашнє завдання Прочитати розділ 2 та виконати вправи 4–6. https://example.com/material" [ref=e1317] [cursor=pointer]:
+                - generic [ref=e862]:
+                  - generic [ref=e863]: Домашнє завдання
+                  - text: Прочитати розділ 2 та виконати вправи 4–6.
+                  - link "https://example.com/material" [ref=e1318]:
+                    - /url: https://example.com/material
+          - article [ref=e865]:
+            - generic "6 пара" [ref=e866]: "6"
+            - generic [ref=e867]:
+              - generic [ref=e868]:
+                - heading "Специф тур бізн для маркет" [level=2] [ref=e869]
+                - generic [ref=e870]: В п
+              - generic [ref=e871]:
+                - generic [ref=e872]: 16:00–17:15
+                - generic [ref=e876]: 1 355-
+                - generic [ref=e880]: доц. Богославець О.Г
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e884] [cursor=pointer]:
+                - generic [ref=e888]:
+                  - generic [ref=e889]: Домашнє завдання
+                  - emphasis [ref=e890]: Натисніть, щоб записати…
+      - article [ref=e891]:
+        - generic [ref=e892]:
+          - generic [ref=e893]: Вівторок
+          - time [ref=e894]: 15 вересня
+        - generic [ref=e895]:
+          - article [ref=e896]:
+            - generic "4 пара" [ref=e897]: "4"
+            - generic [ref=e898]:
+              - generic [ref=e899]:
+                - heading "Операційний менеджмент" [level=2] [ref=e900]
+                - generic [ref=e901]: В п
+              - generic [ref=e902]:
+                - generic [ref=e903]: 13:00–14:15
+                - generic [ref=e907]: 1 339
+                - generic [ref=e911]: доц. Колос І.В
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e915] [cursor=pointer]:
+                - generic [ref=e919]:
+                  - generic [ref=e920]: Домашнє завдання
+                  - emphasis [ref=e921]: Натисніть, щоб записати…
+          - article [ref=e922]:
+            - generic "5 пара" [ref=e923]: "5"
+            - generic [ref=e924]:
+              - generic [ref=e925]:
+                - heading "Маркетинг" [level=2] [ref=e926]
+                - generic [ref=e927]: п
+              - generic [ref=e928]:
+                - generic [ref=e929]: 14:30–15:45
+                - generic [ref=e933]: 1 355-
+                - generic [ref=e937]: ас. Сторчак К.Л
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e941] [cursor=pointer]:
+                - generic [ref=e945]:
+                  - generic [ref=e946]: Домашнє завдання
+                  - emphasis [ref=e947]: Натисніть, щоб записати…
+          - article [ref=e948]:
+            - generic "6 пара" [ref=e949]: "6"
+            - generic [ref=e950]:
+              - generic [ref=e951]:
+                - heading "Фінанси підприємства" [level=2] [ref=e952]
+                - generic [ref=e953]: В п
+              - generic [ref=e954]:
+                - generic [ref=e955]: 16:00–17:15
+                - generic [ref=e959]: 1 343а
+                - generic [ref=e963]: доц. Кулiш Г.П
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e967] [cursor=pointer]:
+                - generic [ref=e971]:
+                  - generic [ref=e972]: Домашнє завдання
+                  - emphasis [ref=e973]: Натисніть, щоб записати…
+          - article [ref=e974]:
+            - generic "7 пара" [ref=e975]: "7"
+            - generic [ref=e976]:
+              - generic [ref=e977]:
+                - heading "Менеджмент персоналу" [level=2] [ref=e978]
+                - generic [ref=e979]: п
+              - generic [ref=e980]:
+                - generic [ref=e981]: 17:30–18:45
+                - generic [ref=e985]: 1 349-
+                - generic [ref=e989]: ст.в. Василенко А.О
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e993] [cursor=pointer]:
+                - generic [ref=e997]:
+                  - generic [ref=e998]: Домашнє завдання
+                  - emphasis [ref=e999]: Натисніть, щоб записати…
+      - article [ref=e1000]:
+        - generic [ref=e1001]:
+          - generic [ref=e1002]: Середа
+          - time [ref=e1003]: 16 вересня
+        - generic [ref=e1004]:
+          - article [ref=e1005]:
+            - generic "4 пара" [ref=e1006]: "4"
+            - generic [ref=e1007]:
+              - generic [ref=e1008]:
+                - heading "Паблік-рілейшнз у бізнесі" [level=2] [ref=e1009]
+                - generic [ref=e1010]: п
+              - generic [ref=e1011]:
+                - generic [ref=e1012]: 13:00–14:15
+                - generic [ref=e1016]: 1 351
+                - generic [ref=e1020]: доц. Бучинська О.В
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1024] [cursor=pointer]:
+                - generic [ref=e1028]:
+                  - generic [ref=e1029]: Домашнє завдання
+                  - emphasis [ref=e1030]: Натисніть, щоб записати…
+          - article [ref=e1031]:
+            - generic "5 пара" [ref=e1032]: "5"
+            - generic [ref=e1033]:
+              - generic [ref=e1034]:
+                - heading "Фахова іноз мова" [level=2] [ref=e1035]
+                - generic [ref=e1036]: В п
+              - generic [ref=e1037]:
+                - generic [ref=e1038]: 14:30–15:45
+                - generic [ref=e1042]: 1 343а
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1046] [cursor=pointer]:
+                - generic [ref=e1050]:
+                  - generic [ref=e1051]: Домашнє завдання
+                  - emphasis [ref=e1052]: Натисніть, щоб записати…
+      - article [ref=e1053]:
+        - generic [ref=e1054]:
+          - generic [ref=e1055]: Четвер
+          - time [ref=e1056]: 17 вересня
+        - generic [ref=e1057]:
+          - article [ref=e1058]:
+            - generic "2 пара" [ref=e1059]: "2"
+            - generic [ref=e1060]:
+              - generic [ref=e1061]:
+                - heading "Маркетинг" [level=2] [ref=e1062]
+                - generic [ref=e1063]: Л
+              - generic [ref=e1064]:
+                - generic [ref=e1065]: 10:00–11:15
+                - generic [ref=e1069]: online
+                - generic [ref=e1073]: проф. Ларіна Я.С
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1077] [cursor=pointer]:
+                - generic [ref=e1081]:
+                  - generic [ref=e1082]: Домашнє завдання
+                  - emphasis [ref=e1083]: Натисніть, щоб записати…
+          - article [ref=e1084]:
+            - generic "3 пара" [ref=e1085]: "3"
+            - generic [ref=e1086]:
+              - generic [ref=e1087]:
+                - heading "Операційний менеджмент" [level=2] [ref=e1088]
+                - generic [ref=e1089]: В Л
+              - generic [ref=e1090]:
+                - generic [ref=e1091]: 11:30–12:45
+                - generic [ref=e1095]: online
+                - generic [ref=e1099]: доц. Колос І.В
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1103] [cursor=pointer]:
+                - generic [ref=e1107]:
+                  - generic [ref=e1108]: Домашнє завдання
+                  - emphasis [ref=e1109]: Натисніть, щоб записати…
+          - article [ref=e1110]:
+            - generic "4 пара" [ref=e1111]: "4"
+            - generic [ref=e1112]:
+              - generic [ref=e1113]:
+                - heading "Паблік-рілейшнз у бізнесі" [level=2] [ref=e1114]
+                - generic [ref=e1115]: Л
+              - generic [ref=e1116]:
+                - generic [ref=e1117]: 13:00–14:15
+                - generic [ref=e1121]: online
+                - generic [ref=e1125]: доц. Бучинська О.В
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1129] [cursor=pointer]:
+                - generic [ref=e1133]:
+                  - generic [ref=e1134]: Домашнє завдання
+                  - emphasis [ref=e1135]: Натисніть, щоб записати…
+          - article [ref=e1136]:
+            - generic "5 пара" [ref=e1137]: "5"
+            - generic [ref=e1138]:
+              - generic [ref=e1139]:
+                - heading "Специф тур бізн для маркет" [level=2] [ref=e1140]
+                - generic [ref=e1141]: В Л
+              - generic [ref=e1142]:
+                - generic [ref=e1143]: 14:30–15:45
+                - generic [ref=e1147]: online
+                - generic [ref=e1151]: ст.в. Юрченко К.М
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1155] [cursor=pointer]:
+                - generic [ref=e1159]:
+                  - generic [ref=e1160]: Домашнє завдання
+                  - emphasis [ref=e1161]: Натисніть, щоб записати…
+          - article [ref=e1162]:
+            - generic "6 пара" [ref=e1163]: "6"
+            - generic [ref=e1164]:
+              - generic [ref=e1165]:
+                - heading "Менеджмент персоналу" [level=2] [ref=e1166]
+                - generic [ref=e1167]: Л
+              - generic [ref=e1168]:
+                - generic [ref=e1169]: 16:00–17:15
+                - generic [ref=e1173]: online
+                - generic [ref=e1177]: ст.в. Василенко А.О
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1181] [cursor=pointer]:
+                - generic [ref=e1185]:
+                  - generic [ref=e1186]: Домашнє завдання
+                  - emphasis [ref=e1187]: Натисніть, щоб записати…
+      - article [ref=e1188]:
+        - generic [ref=e1189]:
+          - generic [ref=e1190]: П’ятниця
+          - time [ref=e1191]: 18 вересня
+        - generic [ref=e1192]:
+          - article [ref=e1193]:
+            - generic "3 пара" [ref=e1194]: "3"
+            - generic [ref=e1195]:
+              - generic [ref=e1196]:
+                - heading "Електрона комерція" [level=2] [ref=e1197]
+                - generic [ref=e1198]: В Лб1
+              - generic [ref=e1199]:
+                - generic [ref=e1200]: 11:30–12:45
+                - generic [ref=e1204]: КЦ1кл11
+                - generic [ref=e1208]: ст.в. Родіонова О.В
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1212] [cursor=pointer]:
+                - generic [ref=e1216]:
+                  - generic [ref=e1217]: Домашнє завдання
+                  - emphasis [ref=e1218]: Натисніть, щоб записати…
+          - article [ref=e1219]:
+            - generic "4 пара" [ref=e1220]: "4"
+            - generic [ref=e1221]:
+              - generic [ref=e1222]:
+                - heading "Фінанси" [level=2] [ref=e1223]
+                - generic [ref=e1224]: п
+              - generic [ref=e1225]:
+                - generic [ref=e1226]: 13:00–14:15
+                - generic [ref=e1230]: 1 334-
+                - generic [ref=e1234]: доц. Тищенко Д.О
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1238] [cursor=pointer]:
+                - generic [ref=e1242]:
+                  - generic [ref=e1243]: Домашнє завдання
+                  - emphasis [ref=e1244]: Натисніть, щоб записати…
+          - article [ref=e1245]:
+            - generic "5 пара" [ref=e1246]: "5"
+            - generic [ref=e1247]:
+              - generic [ref=e1248]:
+                - heading "Електрона комерція" [level=2] [ref=e1249]
+                - generic [ref=e1250]: В Лб2
+              - generic [ref=e1251]:
+                - generic [ref=e1252]: 14:30–15:45
+                - generic [ref=e1256]: КЦ1кл11
+                - generic [ref=e1260]: ст.в. Родіонова О.В
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1264] [cursor=pointer]:
+                - generic [ref=e1268]:
+                  - generic [ref=e1269]: Домашнє завдання
+                  - emphasis [ref=e1270]: Натисніть, щоб записати…
+          - article [ref=e1271]:
+            - generic "6 пара" [ref=e1272]: "6"
+            - generic [ref=e1273]:
+              - generic [ref=e1274]:
+                - heading "Міжнародна економіка" [level=2] [ref=e1275]
+                - generic [ref=e1276]: п
+              - generic [ref=e1277]:
+                - generic [ref=e1278]: 16:00–17:15
+                - generic [ref=e1282]: 1 343а
+                - generic [ref=e1286]: доц. Загарій В.К
+              - button "Домашнє завдання Натисніть, щоб записати…" [ref=e1290] [cursor=pointer]:
+                - generic [ref=e1294]:
+                  - generic [ref=e1295]: Домашнє завдання
+                  - emphasis [ref=e1296]: Натисніть, щоб записати…

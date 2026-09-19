@@ -1,0 +1,8 @@
+# Copy to .dev.vars for local Worker development.
+GUEST_TOKEN="replace-with-a-long-random-token"
+ADMIN_TOKEN="replace-with-another-long-random-token"
+PIN_PEPPER="replace-with-a-long-random-secret"
+# SHA-256 of "PIN_PEPPER:your-pin". See README.md.
+ADMIN_PIN_HASH="replace-with-generated-hash"
+SESSION_SECRET="replace-with-a-long-random-secret"
+

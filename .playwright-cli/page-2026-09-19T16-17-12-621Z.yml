@@ -1,0 +1,9 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - paragraph [ref=e9]: Сторінка адміністратора
+    - heading "Відкрийте щоденник" [level=1] [ref=e10]
+    - paragraph [ref=e11]: Введіть спільний PIN адміністратора. Учням він не потрібен.
+    - textbox [aria-hidden] [ref=e12]: administrator
+    - generic [ref=e13]: PIN-код
+    - textbox "PIN-код" [active] [ref=e14]
+    - button "Увійти" [disabled] [ref=e15]

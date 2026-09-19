@@ -1,0 +1,21 @@
+- main [ref=e3]:
+  - generic [ref=e15]:
+    - generic [ref=e21]:
+      - generic [ref=e22]: Щоденник
+      - generic [ref=e23]: майстерня адміністратора
+    - generic [ref=e24]:
+      - button "Скопіювати гостьове посилання" [ref=e25] [cursor=pointer]
+      - button "Вийти" [ref=e26] [cursor=pointer]
+  - navigation "Розділи адміністратора" [ref=e29]:
+    - button "Перегляд і ДЗ" [ref=e30] [cursor=pointer]
+    - button "Імпорт PDF" [ref=e34] [cursor=pointer]
+  - generic [ref=e38]:
+    - generic [ref=e39]:
+      - paragraph [ref=e40]: Новий розклад
+      - heading "Вклейте дві сторінки семестру" [level=1] [ref=e41]
+      - paragraph [ref=e42]: Оберіть PDF верхнього й нижнього тижня. Файли відкриються лише у вашому браузері — на сервер вони не потраплять.
+    - generic [ref=e43] [cursor=pointer]:
+      - button "Два PDF готові download.pdf · download 2.pdf" [active]
+      - strong [ref=e49]: Два PDF готові
+      - generic [ref=e50]: download.pdf · download 2.pdf
+    - button "Розпізнати розклад" [ref=e51] [cursor=pointer]

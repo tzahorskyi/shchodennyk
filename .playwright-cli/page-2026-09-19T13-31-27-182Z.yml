@@ -1,0 +1,701 @@
+- main [ref=e3]:
+  - generic [ref=e15]:
+    - generic [ref=e21]:
+      - generic [ref=e22]: Щоденник
+      - generic [ref=e23]: майстерня адміністратора
+    - generic [ref=e24]:
+      - button "Скопіювати гостьове посилання" [ref=e25] [cursor=pointer]
+      - button "Вийти" [ref=e26] [cursor=pointer]
+  - navigation "Розділи адміністратора" [ref=e29]:
+    - button "Перегляд і ДЗ" [ref=e30] [cursor=pointer]
+    - button "Імпорт PDF" [ref=e34] [cursor=pointer]
+  - generic [ref=e38]:
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - paragraph [ref=e54]: Перевірка перед публікацією
+        - heading "35 занять розпізнано" [level=1] [ref=e55]
+      - generic [ref=e56]:
+        - text: Верхній тиждень починається
+        - textbox "Верхній тиждень починається" [ref=e57]: 2026-09-14
+    - group [ref=e58]:
+      - generic "2 рядків варто переглянути" [ref=e59] [cursor=pointer]
+    - table [ref=e61]:
+      - rowgroup [ref=e62]:
+        - row [ref=e63]:
+          - columnheader "Тиждень / день" [ref=e64]
+          - columnheader "Пара" [ref=e65]
+          - columnheader "Час" [ref=e66]
+          - columnheader "Предмет" [ref=e67]
+          - columnheader "Тип" [ref=e68]
+          - columnheader "Викладач" [ref=e69]
+          - columnheader "Аудиторія" [ref=e70]
+          - columnheader "Дії" [ref=e71]
+      - rowgroup [ref=e73]:
+        - row [ref=e74]:
+          - cell "Верхній Понеділок" [ref=e75]:
+            - text: Верхній
+            - generic [ref=e77]: Понеділок
+          - cell [ref=e78]:
+            - spinbutton "Номер пари" [ref=e79]: "5"
+          - cell [ref=e80]:
+            - textbox "Початок" [ref=e81]: 14:30
+            - textbox "Кінець" [ref=e82]: 15:45
+          - cell [ref=e83]:
+            - textbox "Предмет" [ref=e84]: Маркетинг в агробізнесі
+          - cell [ref=e85]:
+            - textbox "Тип заняття" [ref=e86]: В п
+          - cell [ref=e87]:
+            - textbox "Викладач" [ref=e88]: проф. Єранкін О.О
+          - cell [ref=e89]:
+            - textbox "Аудиторія" [ref=e90]: 1 353-
+          - cell [ref=e91]:
+            - button "Видалити рядок" [ref=e92] [cursor=pointer]
+        - row [ref=e95]:
+          - cell "Верхній Понеділок" [ref=e96]:
+            - text: Верхній
+            - generic [ref=e98]: Понеділок
+          - cell [ref=e99]:
+            - spinbutton "Номер пари" [ref=e100]: "6"
+          - cell [ref=e101]:
+            - textbox "Початок" [ref=e102]: 16:00
+            - textbox "Кінець" [ref=e103]: 17:15
+          - cell [ref=e104]:
+            - textbox "Предмет" [ref=e105]: Специф тур бізн для маркет
+          - cell [ref=e106]:
+            - textbox "Тип заняття" [ref=e107]: В п
+          - cell [ref=e108]:
+            - textbox "Викладач" [ref=e109]: доц. Богославець О.Г
+          - cell [ref=e110]:
+            - textbox "Аудиторія" [ref=e111]: 1 355-
+          - cell [ref=e112]:
+            - button "Видалити рядок" [ref=e113] [cursor=pointer]
+        - row [ref=e116]:
+          - cell "Верхній Вівторок" [ref=e117]:
+            - text: Верхній
+            - generic [ref=e119]: Вівторок
+          - cell [ref=e120]:
+            - spinbutton "Номер пари" [ref=e121]: "4"
+          - cell [ref=e122]:
+            - textbox "Початок" [ref=e123]: 13:00
+            - textbox "Кінець" [ref=e124]: 14:15
+          - cell [ref=e125]:
+            - textbox "Предмет" [ref=e126]: Операційний менеджмент
+          - cell [ref=e127]:
+            - textbox "Тип заняття" [ref=e128]: В п
+          - cell [ref=e129]:
+            - textbox "Викладач" [ref=e130]: доц. Колос І.В
+          - cell [ref=e131]:
+            - textbox "Аудиторія" [ref=e132]: 1 339
+          - cell [ref=e133]:
+            - button "Видалити рядок" [ref=e134] [cursor=pointer]
+        - row [ref=e137]:
+          - cell "Верхній Вівторок" [ref=e138]:
+            - text: Верхній
+            - generic [ref=e140]: Вівторок
+          - cell [ref=e141]:
+            - spinbutton "Номер пари" [ref=e142]: "5"
+          - cell [ref=e143]:
+            - textbox "Початок" [ref=e144]: 14:30
+            - textbox "Кінець" [ref=e145]: 15:45
+          - cell [ref=e146]:
+            - textbox "Предмет" [ref=e147]: Маркетинг
+          - cell [ref=e148]:
+            - textbox "Тип заняття" [ref=e149]: п
+          - cell [ref=e150]:
+            - textbox "Викладач" [ref=e151]: ас. Сторчак К.Л
+          - cell [ref=e152]:
+            - textbox "Аудиторія" [ref=e153]: 1 355-
+          - cell [ref=e154]:
+            - button "Видалити рядок" [ref=e155] [cursor=pointer]
+        - row [ref=e158]:
+          - cell "Верхній Вівторок" [ref=e159]:
+            - text: Верхній
+            - generic [ref=e161]: Вівторок
+          - cell [ref=e162]:
+            - spinbutton "Номер пари" [ref=e163]: "6"
+          - cell [ref=e164]:
+            - textbox "Початок" [ref=e165]: 16:00
+            - textbox "Кінець" [ref=e166]: 17:15
+          - cell [ref=e167]:
+            - textbox "Предмет" [ref=e168]: Фінанси підприємства
+          - cell [ref=e169]:
+            - textbox "Тип заняття" [ref=e170]: В п
+          - cell [ref=e171]:
+            - textbox "Викладач" [ref=e172]: доц. Кулiш Г.П
+          - cell [ref=e173]:
+            - textbox "Аудиторія" [ref=e174]: 1 343а
+          - cell [ref=e175]:
+            - button "Видалити рядок" [ref=e176] [cursor=pointer]
+        - row [ref=e179]:
+          - cell "Верхній Вівторок" [ref=e180]:
+            - text: Верхній
+            - generic [ref=e182]: Вівторок
+          - cell [ref=e183]:
+            - spinbutton "Номер пари" [ref=e184]: "7"
+          - cell [ref=e185]:
+            - textbox "Початок" [ref=e186]: 17:30
+            - textbox "Кінець" [ref=e187]: 18:45
+          - cell [ref=e188]:
+            - textbox "Предмет" [ref=e189]: Менеджмент персоналу
+          - cell [ref=e190]:
+            - textbox "Тип заняття" [ref=e191]: п
+          - cell [ref=e192]:
+            - textbox "Викладач" [ref=e193]: ст.в. Василенко А.О
+          - cell [ref=e194]:
+            - textbox "Аудиторія" [ref=e195]: 1 349-
+          - cell [ref=e196]:
+            - button "Видалити рядок" [ref=e197] [cursor=pointer]
+        - row [ref=e200]:
+          - cell "Верхній Середа" [ref=e201]:
+            - text: Верхній
+            - generic [ref=e203]: Середа
+          - cell [ref=e204]:
+            - spinbutton "Номер пари" [ref=e205]: "4"
+          - cell [ref=e206]:
+            - textbox "Початок" [ref=e207]: 13:00
+            - textbox "Кінець" [ref=e208]: 14:15
+          - cell [ref=e209]:
+            - textbox "Предмет" [ref=e210]: Паблік-рілейшнз у бізнесі
+          - cell [ref=e211]:
+            - textbox "Тип заняття" [ref=e212]: п
+          - cell [ref=e213]:
+            - textbox "Викладач" [ref=e214]: доц. Бучинська О.В
+          - cell [ref=e215]:
+            - textbox "Аудиторія" [ref=e216]: 1 351
+          - cell [ref=e217]:
+            - button "Видалити рядок" [ref=e218] [cursor=pointer]
+        - row [ref=e221]:
+          - cell "Верхній Середа" [ref=e222]:
+            - text: Верхній
+            - generic [ref=e224]: Середа
+          - cell [ref=e225]:
+            - spinbutton "Номер пари" [ref=e226]: "5"
+          - cell [ref=e227]:
+            - textbox "Початок" [ref=e228]: 14:30
+            - textbox "Кінець" [ref=e229]: 15:45
+          - cell [ref=e230]:
+            - textbox "Предмет" [ref=e231]: Фахова іноз мова
+          - cell [ref=e232]:
+            - textbox "Тип заняття" [ref=e233]: В п
+          - cell [ref=e234]:
+            - textbox "Викладач" [ref=e235]
+          - cell [ref=e236]:
+            - textbox "Аудиторія" [ref=e237]: 1 343а
+          - cell [ref=e238]:
+            - button "Видалити рядок" [ref=e239] [cursor=pointer]
+        - row [ref=e242]:
+          - cell "Верхній Четвер" [ref=e243]:
+            - text: Верхній
+            - generic [ref=e245]: Четвер
+          - cell [ref=e246]:
+            - spinbutton "Номер пари" [ref=e247]: "2"
+          - cell [ref=e248]:
+            - textbox "Початок" [ref=e249]: 10:00
+            - textbox "Кінець" [ref=e250]: 11:15
+          - cell [ref=e251]:
+            - textbox "Предмет" [ref=e252]: Маркетинг
+          - cell [ref=e253]:
+            - textbox "Тип заняття" [ref=e254]: Л
+          - cell [ref=e255]:
+            - textbox "Викладач" [ref=e256]: проф. Ларіна Я.С
+          - cell [ref=e257]:
+            - textbox "Аудиторія" [ref=e258]: online
+          - cell [ref=e259]:
+            - button "Видалити рядок" [ref=e260] [cursor=pointer]
+        - row [ref=e263]:
+          - cell "Верхній Четвер" [ref=e264]:
+            - text: Верхній
+            - generic [ref=e266]: Четвер
+          - cell [ref=e267]:
+            - spinbutton "Номер пари" [ref=e268]: "3"
+          - cell [ref=e269]:
+            - textbox "Початок" [ref=e270]: 11:30
+            - textbox "Кінець" [ref=e271]: 12:45
+          - cell [ref=e272]:
+            - textbox "Предмет" [ref=e273]: Операційний менеджмент
+          - cell [ref=e274]:
+            - textbox "Тип заняття" [ref=e275]: В Л
+          - cell [ref=e276]:
+            - textbox "Викладач" [ref=e277]: доц. Колос І.В
+          - cell [ref=e278]:
+            - textbox "Аудиторія" [ref=e279]: online
+          - cell [ref=e280]:
+            - button "Видалити рядок" [ref=e281] [cursor=pointer]
+        - row [ref=e284]:
+          - cell "Верхній Четвер" [ref=e285]:
+            - text: Верхній
+            - generic [ref=e287]: Четвер
+          - cell [ref=e288]:
+            - spinbutton "Номер пари" [ref=e289]: "4"
+          - cell [ref=e290]:
+            - textbox "Початок" [ref=e291]: 13:00
+            - textbox "Кінець" [ref=e292]: 14:15
+          - cell [ref=e293]:
+            - textbox "Предмет" [ref=e294]: Паблік-рілейшнз у бізнесі
+          - cell [ref=e295]:
+            - textbox "Тип заняття" [ref=e296]: Л
+          - cell [ref=e297]:
+            - textbox "Викладач" [ref=e298]: доц. Бучинська О.В
+          - cell [ref=e299]:
+            - textbox "Аудиторія" [ref=e300]: online
+          - cell [ref=e301]:
+            - button "Видалити рядок" [ref=e302] [cursor=pointer]
+        - row [ref=e305]:
+          - cell "Верхній Четвер" [ref=e306]:
+            - text: Верхній
+            - generic [ref=e308]: Четвер
+          - cell [ref=e309]:
+            - spinbutton "Номер пари" [ref=e310]: "5"
+          - cell [ref=e311]:
+            - textbox "Початок" [ref=e312]: 14:30
+            - textbox "Кінець" [ref=e313]: 15:45
+          - cell [ref=e314]:
+            - textbox "Предмет" [ref=e315]: Специф тур бізн для маркет
+          - cell [ref=e316]:
+            - textbox "Тип заняття" [ref=e317]: В Л
+          - cell [ref=e318]:
+            - textbox "Викладач" [ref=e319]: ст.в. Юрченко К.М
+          - cell [ref=e320]:
+            - textbox "Аудиторія" [ref=e321]: online
+          - cell [ref=e322]:
+            - button "Видалити рядок" [ref=e323] [cursor=pointer]
+        - row [ref=e326]:
+          - cell "Верхній Четвер" [ref=e327]:
+            - text: Верхній
+            - generic [ref=e329]: Четвер
+          - cell [ref=e330]:
+            - spinbutton "Номер пари" [ref=e331]: "6"
+          - cell [ref=e332]:
+            - textbox "Початок" [ref=e333]: 16:00
+            - textbox "Кінець" [ref=e334]: 17:15
+          - cell [ref=e335]:
+            - textbox "Предмет" [ref=e336]: Менеджмент персоналу
+          - cell [ref=e337]:
+            - textbox "Тип заняття" [ref=e338]: Л
+          - cell [ref=e339]:
+            - textbox "Викладач" [ref=e340]: ст.в. Василенко А.О
+          - cell [ref=e341]:
+            - textbox "Аудиторія" [ref=e342]: online
+          - cell [ref=e343]:
+            - button "Видалити рядок" [ref=e344] [cursor=pointer]
+        - row [ref=e347]:
+          - cell "Верхній П’ятниця" [ref=e348]:
+            - text: Верхній
+            - generic [ref=e350]: П’ятниця
+          - cell [ref=e351]:
+            - spinbutton "Номер пари" [ref=e352]: "3"
+          - cell [ref=e353]:
+            - textbox "Початок" [ref=e354]: 11:30
+            - textbox "Кінець" [ref=e355]: 12:45
+          - cell [ref=e356]:
+            - textbox "Предмет" [ref=e357]: Електрона комерція
+          - cell [ref=e358]:
+            - textbox "Тип заняття" [ref=e359]: В Лб1
+          - cell [ref=e360]:
+            - textbox "Викладач" [ref=e361]: ст.в. Родіонова О.В
+          - cell [ref=e362]:
+            - textbox "Аудиторія" [ref=e363]: КЦ1кл11
+          - cell [ref=e364]:
+            - button "Видалити рядок" [ref=e365] [cursor=pointer]
+        - row [ref=e368]:
+          - cell "Верхній П’ятниця" [ref=e369]:
+            - text: Верхній
+            - generic [ref=e371]: П’ятниця
+          - cell [ref=e372]:
+            - spinbutton "Номер пари" [ref=e373]: "4"
+          - cell [ref=e374]:
+            - textbox "Початок" [ref=e375]: 13:00
+            - textbox "Кінець" [ref=e376]: 14:15
+          - cell [ref=e377]:
+            - textbox "Предмет" [ref=e378]: Фінанси
+          - cell [ref=e379]:
+            - textbox "Тип заняття" [ref=e380]: п
+          - cell [ref=e381]:
+            - textbox "Викладач" [ref=e382]: доц. Тищенко Д.О
+          - cell [ref=e383]:
+            - textbox "Аудиторія" [ref=e384]: 1 334-
+          - cell [ref=e385]:
+            - button "Видалити рядок" [ref=e386] [cursor=pointer]
+        - row [ref=e389]:
+          - cell "Верхній П’ятниця" [ref=e390]:
+            - text: Верхній
+            - generic [ref=e392]: П’ятниця
+          - cell [ref=e393]:
+            - spinbutton "Номер пари" [ref=e394]: "5"
+          - cell [ref=e395]:
+            - textbox "Початок" [ref=e396]: 14:30
+            - textbox "Кінець" [ref=e397]: 15:45
+          - cell [ref=e398]:
+            - textbox "Предмет" [ref=e399]: Електрона комерція
+          - cell [ref=e400]:
+            - textbox "Тип заняття" [ref=e401]: В Лб2
+          - cell [ref=e402]:
+            - textbox "Викладач" [ref=e403]: ст.в. Родіонова О.В
+          - cell [ref=e404]:
+            - textbox "Аудиторія" [ref=e405]: КЦ1кл11
+          - cell [ref=e406]:
+            - button "Видалити рядок" [ref=e407] [cursor=pointer]
+        - row [ref=e410]:
+          - cell "Верхній П’ятниця" [ref=e411]:
+            - text: Верхній
+            - generic [ref=e413]: П’ятниця
+          - cell [ref=e414]:
+            - spinbutton "Номер пари" [ref=e415]: "6"
+          - cell [ref=e416]:
+            - textbox "Початок" [ref=e417]: 16:00
+            - textbox "Кінець" [ref=e418]: 17:15
+          - cell [ref=e419]:
+            - textbox "Предмет" [ref=e420]: Міжнародна економіка
+          - cell [ref=e421]:
+            - textbox "Тип заняття" [ref=e422]: п
+          - cell [ref=e423]:
+            - textbox "Викладач" [ref=e424]: доц. Загарій В.К
+          - cell [ref=e425]:
+            - textbox "Аудиторія" [ref=e426]: 1 343а
+          - cell [ref=e427]:
+            - button "Видалити рядок" [ref=e428] [cursor=pointer]
+        - row [ref=e431]:
+          - cell "Нижній Понеділок" [ref=e432]:
+            - text: Нижній
+            - generic [ref=e434]: Понеділок
+          - cell [ref=e435]:
+            - spinbutton "Номер пари" [ref=e436]: "4"
+          - cell [ref=e437]:
+            - textbox "Початок" [ref=e438]: 13:00
+            - textbox "Кінець" [ref=e439]: 14:15
+          - cell [ref=e440]:
+            - textbox "Предмет" [ref=e441]: Менеджмент персоналу
+          - cell [ref=e442]:
+            - textbox "Тип заняття" [ref=e443]: п
+          - cell [ref=e444]:
+            - textbox "Викладач" [ref=e445]: ст.в. Василенко А.О
+          - cell [ref=e446]:
+            - textbox "Аудиторія" [ref=e447]: 1 408
+          - cell [ref=e448]:
+            - button "Видалити рядок" [ref=e449] [cursor=pointer]
+        - row [ref=e452]:
+          - cell "Нижній Понеділок" [ref=e453]:
+            - text: Нижній
+            - generic [ref=e455]: Понеділок
+          - cell [ref=e456]:
+            - spinbutton "Номер пари" [ref=e457]: "5"
+          - cell [ref=e458]:
+            - textbox "Початок" [ref=e459]: 14:30
+            - textbox "Кінець" [ref=e460]: 15:45
+          - cell [ref=e461]:
+            - textbox "Предмет" [ref=e462]: Маркетинг в агробізнесі
+          - cell [ref=e463]:
+            - textbox "Тип заняття" [ref=e464]: В п
+          - cell [ref=e465]:
+            - textbox "Викладач" [ref=e466]: проф. Єранкін О.О
+          - cell [ref=e467]:
+            - textbox "Аудиторія" [ref=e468]: 1 353-
+          - cell [ref=e469]:
+            - button "Видалити рядок" [ref=e470] [cursor=pointer]
+        - row [ref=e473]:
+          - cell "Нижній Понеділок" [ref=e474]:
+            - text: Нижній
+            - generic [ref=e476]: Понеділок
+          - cell [ref=e477]:
+            - spinbutton "Номер пари" [ref=e478]: "6"
+          - cell [ref=e479]:
+            - textbox "Початок" [ref=e480]: 16:00
+            - textbox "Кінець" [ref=e481]: 17:15
+          - cell [ref=e482]:
+            - textbox "Предмет" [ref=e483]: Специф тур бізн для маркет
+          - cell [ref=e484]:
+            - textbox "Тип заняття" [ref=e485]: В п
+          - cell [ref=e486]:
+            - textbox "Викладач" [ref=e487]: доц. Богославець О.Г
+          - cell [ref=e488]:
+            - textbox "Аудиторія" [ref=e489]: 1 353-
+          - cell [ref=e490]:
+            - button "Видалити рядок" [ref=e491] [cursor=pointer]
+        - row [ref=e494]:
+          - cell "Нижній Вівторок" [ref=e495]:
+            - text: Нижній
+            - generic [ref=e497]: Вівторок
+          - cell [ref=e498]:
+            - spinbutton "Номер пари" [ref=e499]: "4"
+          - cell [ref=e500]:
+            - textbox "Початок" [ref=e501]: 13:00
+            - textbox "Кінець" [ref=e502]: 14:15
+          - cell [ref=e503]:
+            - textbox "Предмет" [ref=e504]: Операційний менеджмент
+          - cell [ref=e505]:
+            - textbox "Тип заняття" [ref=e506]: В п
+          - cell [ref=e507]:
+            - textbox "Викладач" [ref=e508]: доц. Колос І.В
+          - cell [ref=e509]:
+            - textbox "Аудиторія" [ref=e510]: 1 339
+          - cell [ref=e511]:
+            - button "Видалити рядок" [ref=e512] [cursor=pointer]
+        - row [ref=e515]:
+          - cell "Нижній Вівторок" [ref=e516]:
+            - text: Нижній
+            - generic [ref=e518]: Вівторок
+          - cell [ref=e519]:
+            - spinbutton "Номер пари" [ref=e520]: "5"
+          - cell [ref=e521]:
+            - textbox "Початок" [ref=e522]: 14:30
+            - textbox "Кінець" [ref=e523]: 15:45
+          - cell [ref=e524]:
+            - textbox "Предмет" [ref=e525]: Електрона комерція
+          - cell [ref=e526]:
+            - textbox "Тип заняття" [ref=e527]: В Лб1
+          - cell [ref=e528]:
+            - textbox "Викладач" [ref=e529]: ст.в. Родіонова О.В
+          - cell [ref=e530]:
+            - textbox "Аудиторія" [ref=e531]: КЦ1кл10
+          - cell [ref=e532]:
+            - button "Видалити рядок" [ref=e533] [cursor=pointer]
+        - row [ref=e536]:
+          - cell "Нижній Вівторок" [ref=e537]:
+            - text: Нижній
+            - generic [ref=e539]: Вівторок
+          - cell [ref=e540]:
+            - spinbutton "Номер пари" [ref=e541]: "6"
+          - cell [ref=e542]:
+            - textbox "Початок" [ref=e543]: 16:00
+            - textbox "Кінець" [ref=e544]: 17:15
+          - cell [ref=e545]:
+            - textbox "Предмет" [ref=e546]: Фінанси підприємства
+          - cell [ref=e547]:
+            - textbox "Тип заняття" [ref=e548]: В п
+          - cell [ref=e549]:
+            - textbox "Викладач" [ref=e550]: доц. Кулiш Г.П
+          - cell [ref=e551]:
+            - textbox "Аудиторія" [ref=e552]: 1 330-
+          - cell [ref=e553]:
+            - button "Видалити рядок" [ref=e554] [cursor=pointer]
+        - row [ref=e557]:
+          - cell "Нижній Вівторок" [ref=e558]:
+            - text: Нижній
+            - generic [ref=e560]: Вівторок
+          - cell [ref=e561]:
+            - spinbutton "Номер пари" [ref=e562]: "7"
+          - cell [ref=e563]:
+            - textbox "Початок" [ref=e564]: 17:30
+            - textbox "Кінець" [ref=e565]: 18:45
+          - cell [ref=e566]:
+            - textbox "Предмет" [ref=e567]: Паблік-рілейшнз у бізнесі
+          - cell [ref=e568]:
+            - textbox "Тип заняття" [ref=e569]: п
+          - cell [ref=e570]:
+            - textbox "Викладач" [ref=e571]: доц. Бучинська О.В
+          - cell [ref=e572]:
+            - textbox "Аудиторія" [ref=e573]: 1 353-
+          - cell [ref=e574]:
+            - button "Видалити рядок" [ref=e575] [cursor=pointer]
+        - row [ref=e578]:
+          - cell "Нижній Середа" [ref=e579]:
+            - text: Нижній
+            - generic [ref=e581]: Середа
+          - cell [ref=e582]:
+            - spinbutton "Номер пари" [ref=e583]: "4"
+          - cell [ref=e584]:
+            - textbox "Початок" [ref=e585]: 13:00
+            - textbox "Кінець" [ref=e586]: 14:15
+          - cell [ref=e587]:
+            - textbox "Предмет" [ref=e588]: Міжнародна економіка
+          - cell [ref=e589]:
+            - textbox "Тип заняття" [ref=e590]: п
+          - cell [ref=e591]:
+            - textbox "Викладач" [ref=e592]: доц. Загарій В.К
+          - cell [ref=e593]:
+            - textbox "Аудиторія" [ref=e594]: 1 443
+          - cell [ref=e595]:
+            - button "Видалити рядок" [ref=e596] [cursor=pointer]
+        - row [ref=e599]:
+          - cell "Нижній Середа" [ref=e600]:
+            - text: Нижній
+            - generic [ref=e602]: Середа
+          - cell [ref=e603]:
+            - spinbutton "Номер пари" [ref=e604]: "5"
+          - cell [ref=e605]:
+            - textbox "Початок" [ref=e606]: 14:30
+            - textbox "Кінець" [ref=e607]: 15:45
+          - cell [ref=e608]:
+            - textbox "Предмет" [ref=e609]: Фахова іноз мова
+          - cell [ref=e610]:
+            - textbox "Тип заняття" [ref=e611]: В п
+          - cell [ref=e612]:
+            - textbox "Викладач" [ref=e613]
+          - cell [ref=e614]:
+            - textbox "Аудиторія" [ref=e615]: 1 343а
+          - cell [ref=e616]:
+            - button "Видалити рядок" [ref=e617] [cursor=pointer]
+        - row [ref=e620]:
+          - cell "Нижній Четвер" [ref=e621]:
+            - text: Нижній
+            - generic [ref=e623]: Четвер
+          - cell [ref=e624]:
+            - spinbutton "Номер пари" [ref=e625]: "2"
+          - cell [ref=e626]:
+            - textbox "Початок" [ref=e627]: 10:00
+            - textbox "Кінець" [ref=e628]: 11:15
+          - cell [ref=e629]:
+            - textbox "Предмет" [ref=e630]: Фінанси підприємства
+          - cell [ref=e631]:
+            - textbox "Тип заняття" [ref=e632]: В Л
+          - cell [ref=e633]:
+            - textbox "Викладач" [ref=e634]: доц. Кулiш Г.П
+          - cell [ref=e635]:
+            - textbox "Аудиторія" [ref=e636]: online
+          - cell [ref=e637]:
+            - button "Видалити рядок" [ref=e638] [cursor=pointer]
+        - row [ref=e641]:
+          - cell "Нижній Четвер" [ref=e642]:
+            - text: Нижній
+            - generic [ref=e644]: Четвер
+          - cell [ref=e645]:
+            - spinbutton "Номер пари" [ref=e646]: "3"
+          - cell [ref=e647]:
+            - textbox "Початок" [ref=e648]: 11:30
+            - textbox "Кінець" [ref=e649]: 12:45
+          - cell [ref=e650]:
+            - textbox "Предмет" [ref=e651]: Електрона комерція
+          - cell [ref=e652]:
+            - textbox "Тип заняття" [ref=e653]: В Л
+          - cell [ref=e654]:
+            - textbox "Викладач" [ref=e655]: ст.в. Родіонова О.В
+          - cell [ref=e656]:
+            - textbox "Аудиторія" [ref=e657]: online
+          - cell [ref=e658]:
+            - button "Видалити рядок" [ref=e659] [cursor=pointer]
+        - row [ref=e662]:
+          - cell "Нижній Четвер" [ref=e663]:
+            - text: Нижній
+            - generic [ref=e665]: Четвер
+          - cell [ref=e666]:
+            - spinbutton "Номер пари" [ref=e667]: "4"
+          - cell [ref=e668]:
+            - textbox "Початок" [ref=e669]: 13:00
+            - textbox "Кінець" [ref=e670]: 14:15
+          - cell [ref=e671]:
+            - textbox "Предмет" [ref=e672]: Маркетинг
+          - cell [ref=e673]:
+            - textbox "Тип заняття" [ref=e674]: Л
+          - cell [ref=e675]:
+            - textbox "Викладач" [ref=e676]: проф. Ларіна Я.С
+          - cell [ref=e677]:
+            - textbox "Аудиторія" [ref=e678]: online
+          - cell [ref=e679]:
+            - button "Видалити рядок" [ref=e680] [cursor=pointer]
+        - row [ref=e683]:
+          - cell "Нижній Четвер" [ref=e684]:
+            - text: Нижній
+            - generic [ref=e686]: Четвер
+          - cell [ref=e687]:
+            - spinbutton "Номер пари" [ref=e688]: "5"
+          - cell [ref=e689]:
+            - textbox "Початок" [ref=e690]: 14:30
+            - textbox "Кінець" [ref=e691]: 15:45
+          - cell [ref=e692]:
+            - textbox "Предмет" [ref=e693]: Фінанси
+          - cell [ref=e694]:
+            - textbox "Тип заняття" [ref=e695]: Л
+          - cell [ref=e696]:
+            - textbox "Викладач" [ref=e697]: доц. Білявська О.Б
+          - cell [ref=e698]:
+            - textbox "Аудиторія" [ref=e699]: online
+          - cell [ref=e700]:
+            - button "Видалити рядок" [ref=e701] [cursor=pointer]
+        - row [ref=e704]:
+          - cell "Нижній Четвер" [ref=e705]:
+            - text: Нижній
+            - generic [ref=e707]: Четвер
+          - cell [ref=e708]:
+            - spinbutton "Номер пари" [ref=e709]: "6"
+          - cell [ref=e710]:
+            - textbox "Початок" [ref=e711]: 16:00
+            - textbox "Кінець" [ref=e712]: 17:15
+          - cell [ref=e713]:
+            - textbox "Предмет" [ref=e714]: Міжнародна економіка
+          - cell [ref=e715]:
+            - textbox "Тип заняття" [ref=e716]: Л
+          - cell [ref=e717]:
+            - textbox "Викладач" [ref=e718]: доц. Загарій В.К
+          - cell [ref=e719]:
+            - textbox "Аудиторія" [ref=e720]: online
+          - cell [ref=e721]:
+            - button "Видалити рядок" [ref=e722] [cursor=pointer]
+        - row [ref=e725]:
+          - cell "Нижній Четвер" [ref=e726]:
+            - text: Нижній
+            - generic [ref=e728]: Четвер
+          - cell [ref=e729]:
+            - spinbutton "Номер пари" [ref=e730]: "7"
+          - cell [ref=e731]:
+            - textbox "Початок" [ref=e732]: 17:30
+            - textbox "Кінець" [ref=e733]: 18:45
+          - cell [ref=e734]:
+            - textbox "Предмет" [ref=e735]: Маркетинг в агробізнесі
+          - cell [ref=e736]:
+            - textbox "Тип заняття" [ref=e737]: В Л
+          - cell [ref=e738]:
+            - textbox "Викладач" [ref=e739]: проф. Єранкін О.О
+          - cell [ref=e740]:
+            - textbox "Аудиторія" [ref=e741]: online
+          - cell [ref=e742]:
+            - button "Видалити рядок" [ref=e743] [cursor=pointer]
+        - row [ref=e746]:
+          - cell "Нижній П’ятниця" [ref=e747]:
+            - text: Нижній
+            - generic [ref=e749]: П’ятниця
+          - cell [ref=e750]:
+            - spinbutton "Номер пари" [ref=e751]: "4"
+          - cell [ref=e752]:
+            - textbox "Початок" [ref=e753]: 13:00
+            - textbox "Кінець" [ref=e754]: 14:15
+          - cell [ref=e755]:
+            - textbox "Предмет" [ref=e756]: Маркетинг
+          - cell [ref=e757]:
+            - textbox "Тип заняття" [ref=e758]: п
+          - cell [ref=e759]:
+            - textbox "Викладач" [ref=e760]: ас. Сторчак К.Л
+          - cell [ref=e761]:
+            - textbox "Аудиторія" [ref=e762]: 1 437
+          - cell [ref=e763]:
+            - button "Видалити рядок" [ref=e764] [cursor=pointer]
+        - row [ref=e767]:
+          - cell "Нижній П’ятниця" [ref=e768]:
+            - text: Нижній
+            - generic [ref=e770]: П’ятниця
+          - cell [ref=e771]:
+            - spinbutton "Номер пари" [ref=e772]: "5"
+          - cell [ref=e773]:
+            - textbox "Початок" [ref=e774]: 14:30
+            - textbox "Кінець" [ref=e775]: 15:45
+          - cell [ref=e776]:
+            - textbox "Предмет" [ref=e777]: Фінанси
+          - cell [ref=e778]:
+            - textbox "Тип заняття" [ref=e779]: п
+          - cell [ref=e780]:
+            - textbox "Викладач" [ref=e781]: доц. Тищенко Д.О
+          - cell [ref=e782]:
+            - textbox "Аудиторія" [ref=e783]: 1 437
+          - cell [ref=e784]:
+            - button "Видалити рядок" [ref=e785] [cursor=pointer]
+        - row [ref=e788]:
+          - cell "Нижній П’ятниця" [ref=e789]:
+            - text: Нижній
+            - generic [ref=e791]: П’ятниця
+          - cell [ref=e792]:
+            - spinbutton "Номер пари" [ref=e793]: "6"
+          - cell [ref=e794]:
+            - textbox "Початок" [ref=e795]: 16:00
+            - textbox "Кінець" [ref=e796]: 17:15
+          - cell [ref=e797]:
+            - textbox "Предмет" [ref=e798]: Електрона комерція
+          - cell [ref=e799]:
+            - textbox "Тип заняття" [ref=e800]: В Лб2
+          - cell [ref=e801]:
+            - textbox "Викладач" [ref=e802]: ст.в. Родіонова О.В
+          - cell [ref=e803]:
+            - textbox "Аудиторія" [ref=e804]: КЦ1кл11
+          - cell [ref=e805]:
+            - button "Видалити рядок" [ref=e806] [cursor=pointer]
+    - generic [ref=e809]:
+      - button "Обрати інші файли" [ref=e810] [cursor=pointer]
+      - button "Опублікувати розклад" [ref=e811] [cursor=pointer]
