@@ -4,6 +4,7 @@ import { api } from "../lib/api";
 import { BookOpen, Close, Upload } from "./Icons";
 import { Diary } from "./Diary";
 import { PdfImporter } from "./PdfImporter";
+import { SemesterControl } from "./SemesterControl";
 
 export function AdminApp({ adminToken }: { adminToken: string }) {
   const [session, setSession] = useState<AdminSessionResponse | null>(null);
@@ -78,6 +79,7 @@ export function AdminApp({ adminToken }: { adminToken: string }) {
         <button className={tab === "diary" ? "is-active" : ""} onClick={() => setTab("diary")}><BookOpen /> Перегляд і ДЗ</button>
         <button className={tab === "import" ? "is-active" : ""} onClick={() => setTab("import")}><Upload /> Імпорт PDF</button>
       </nav>
+      <SemesterControl adminToken={adminToken} />
       {tab === "diary"
         ? <Diary guestToken={guestToken} adminToken={adminToken} embedded />
         : <PdfImporter adminToken={adminToken} onPublished={() => setTab("diary")} />}

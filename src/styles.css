@@ -476,6 +476,26 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .admin-tabs button.is-active { border-bottom-color: var(--red); color: var(--ink-dark); font-weight: 700; }
 .admin-tabs svg { width: 18px; }
+.semester-control {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto 26px;
+  padding: 20px 24px 18px 38px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px 28px;
+  border: 1px solid rgba(56,68,72,.16);
+  border-radius: 3px 8px 4px 6px;
+  background-color: var(--paper);
+  background-image: linear-gradient(to right, transparent 0, transparent 20px, rgba(181,74,67,.22) 21px, transparent 22px), repeating-linear-gradient(to bottom, transparent 0, transparent 31px, var(--rule) 32px, transparent 33px);
+  box-shadow: 0 7px 20px rgba(48,41,31,.08);
+}
+.semester-control .eyebrow { margin-bottom: 2px; font-size: 18px; }
+.semester-control h2 { margin: 0 0 5px; font-size: 20px; }
+.semester-control p { margin: 0; color: #68717b; font-size: 12px; line-height: 1.5; }
+.semester-control__form { display: flex; align-items: end; gap: 10px; }
+.semester-control__form label { display: grid; gap: 5px; color: #626b74; font-size: 11px; }
+.semester-control__form input { min-height: 44px; padding: 7px 10px; border: 1px solid rgba(22,61,114,.28); border-radius: 3px; background: #fffef8; color: var(--ink-dark); }
+.semester-control__status { grid-column: 1 / -1; color: #2f654e !important; }
 
 .import-page, .preview-page {
   width: min(1180px, calc(100% - 32px));
@@ -568,6 +588,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .admin-actions .copy-link { max-width: 152px; padding: 7px 9px; font-size: 10px; }
   .admin-tabs { margin: 14px auto 24px; }
   .admin-tabs button { flex: 1; justify-content: center; padding: 8px; font-size: 12px; }
+  .semester-control { padding: 18px 16px 18px 30px; display: block; }
+  .semester-control__form { margin-top: 14px; align-items: stretch; flex-direction: column; }
+  .semester-control__form .primary-button { width: 100%; }
   .import-page, .preview-page { margin-top: 25px; }
   .drop-zone { min-height: 190px; padding: 25px 18px; }
   .preview-heading { display: block; }

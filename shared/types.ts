@@ -54,3 +54,9 @@ export interface AdminSessionResponse {
   guestPath?: string;
 }
 
+export interface SchedulePeriod {
+  id: number;
+  effectiveFrom: string;
+  effectiveUntil: string | null;
+  anchorMonday: string;
+}

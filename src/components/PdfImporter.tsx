@@ -1,6 +1,6 @@
 import { ChangeEvent, useMemo, useState } from "react";
 import type { LessonDraft } from "../../shared/types";
-import { mondayOf } from "../../shared/calendar";
+import { addDays, mondayOf } from "../../shared/calendar";
 import { api } from "../lib/api";
 import { parseSchedulePdfs } from "../lib/pdfSchedule";
 import { Close, Upload } from "./Icons";
@@ -12,6 +12,7 @@ export function PdfImporter({ adminToken, onPublished }: { adminToken: string; o
   const [lessons, setLessons] = useState<LessonDraft[]>([]);
   const [warnings, setWarnings] = useState<string[]>([]);
   const [anchorMonday, setAnchorMonday] = useState("");
+  const [effectiveUntil, setEffectiveUntil] = useState("");
   const [parsing, setParsing] = useState(false);
   const [publishing, setPublishing] = useState(false);
   const [error, setError] = useState("");
@@ -50,7 +51,11 @@ export function PdfImporter({ adminToken, onPublished }: { adminToken: string; o
       setLessons(rows);
       setWarnings(results.flatMap((result) => result.warnings));
       const upperFirstDate = results.find((result) => result.weekType === "upper")?.dates[0];
-      if (upperFirstDate) setAnchorMonday(mondayOf(upperFirstDate));
+      if (upperFirstDate) {
+        const monday = mondayOf(upperFirstDate);
+        setAnchorMonday(monday);
+        setEffectiveUntil(addDays(monday, 125));
+      }
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Не вдалося прочитати PDF.");
     } finally {
@@ -68,7 +73,7 @@ export function PdfImporter({ adminToken, onPublished }: { adminToken: string; o
     try {
       await api(`/api/admin/${encodeURIComponent(adminToken)}/schedule`, {
         method: "POST",
-        body: JSON.stringify({ anchorMonday, lessons }),
+        body: JSON.stringify({ anchorMonday, effectiveUntil, lessons }),
       });
       onPublished();
     } catch (caught) {
@@ -106,6 +111,9 @@ export function PdfImporter({ adminToken, onPublished }: { adminToken: string; o
         <div><p className="eyebrow">Перевірка перед публікацією</p><h1>{lessons.length} занять розпізнано</h1></div>
         <label>Верхній тиждень починається
           <input type="date" value={anchorMonday} onChange={(event) => setAnchorMonday(event.target.value)} />
+        </label>
+        <label>Розклад діє до
+          <input type="date" min={anchorMonday} value={effectiveUntil} onChange={(event) => setEffectiveUntil(event.target.value)} />
         </label>
       </header>
       {warnings.length > 0 && (
@@ -168,7 +176,7 @@ export function PdfImporter({ adminToken, onPublished }: { adminToken: string; o
       {error && <p className="field-error" role="alert">{error}</p>}
       <footer className="preview-actions">
         <button className="text-button" onClick={() => { setLessons([]); setFiles([]); }}>Обрати інші файли</button>
-        <button className="primary-button" disabled={!anchorMonday || blockers.length > 0 || publishing} onClick={() => void publish()}>
+        <button className="primary-button" disabled={!anchorMonday || !effectiveUntil || blockers.length > 0 || publishing} onClick={() => void publish()}>
           {publishing ? "Публікуємо…" : "Опублікувати розклад"}
         </button>
       </footer>

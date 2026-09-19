@@ -6,6 +6,7 @@ import type {
   HomeworkRevision,
   LessonDraft,
   LessonOccurrence,
+  SchedulePeriod,
   WeekResponse,
 } from "../shared/types";
 
@@ -24,6 +25,7 @@ interface ScheduleVersionRow {
   effective_from: string;
   anchor_monday: string;
   upper_on_anchor: number;
+  effective_until: string | null;
 }
 
 interface LessonRow {
@@ -183,23 +185,64 @@ app.get("/api/admin/:token/session", async (context) => {
   return context.json(response);
 });
 
+app.get("/api/admin/:token/schedule/current", async (context) => {
+  assertAdminToken(context.req.param("token"), context.env);
+  if (!(await hasAdminSession(context, context.env))) {
+    return context.json({ error: "Потрібен вхід адміністратора." }, 401);
+  }
+  const row = await context.env.DB.prepare(
+    "SELECT id, effective_from, effective_until, anchor_monday FROM schedule_versions ORDER BY effective_from DESC, id DESC LIMIT 1",
+  ).first<{ id: number; effective_from: string; effective_until: string | null; anchor_monday: string }>();
+  const schedule: SchedulePeriod | null = row ? {
+    id: row.id,
+    effectiveFrom: row.effective_from,
+    effectiveUntil: row.effective_until,
+    anchorMonday: row.anchor_monday,
+  } : null;
+  return context.json({ schedule });
+});
+
+app.patch("/api/admin/:token/schedule/current", async (context) => {
+  assertAdminToken(context.req.param("token"), context.env);
+  assertSameOrigin(context.req.raw);
+  if (!(await hasAdminSession(context, context.env))) {
+    return context.json({ error: "Потрібен вхід адміністратора." }, 401);
+  }
+  const body = await context.req.json<{ effectiveUntil?: unknown }>();
+  const effectiveUntil = requireDate(body.effectiveUntil);
+  const current = await context.env.DB.prepare(
+    "SELECT id, effective_from FROM schedule_versions ORDER BY effective_from DESC, id DESC LIMIT 1",
+  ).first<{ id: number; effective_from: string }>();
+  if (!current) return context.json({ error: "Спочатку імпортуйте розклад." }, 404);
+  if (effectiveUntil < current.effective_from) {
+    return context.json({ error: "Кінець семестру не може бути раніше початку." }, 400);
+  }
+  await context.env.DB.prepare("UPDATE schedule_versions SET effective_until = ?1 WHERE id = ?2")
+    .bind(effectiveUntil, current.id).run();
+  return context.json({ id: current.id, effectiveFrom: current.effective_from, effectiveUntil });
+});
+
 app.post("/api/admin/:token/schedule", async (context) => {
   assertAdminToken(context.req.param("token"), context.env);
   assertSameOrigin(context.req.raw);
   if (!(await hasAdminSession(context, context.env))) {
     return context.json({ error: "Потрібен вхід адміністратора." }, 401);
   }
-  const body = await context.req.json<{ anchorMonday?: unknown; lessons?: unknown }>();
+  const body = await context.req.json<{ anchorMonday?: unknown; effectiveUntil?: unknown; lessons?: unknown }>();
   const anchorMonday = requireDate(body.anchorMonday);
+  const effectiveUntil = requireDate(body.effectiveUntil);
   const lessons = requireLessons(body.lessons);
   if (isoWeekday(anchorMonday) !== 1) {
     return context.json({ error: "Опорна дата має бути понеділком." }, 400);
   }
+  if (effectiveUntil < anchorMonday) {
+    return context.json({ error: "Кінець семестру не може бути раніше початку." }, 400);
+  }
 
   const versionResult = await context.env.DB.prepare(
-    "INSERT INTO schedule_versions (effective_from, anchor_monday, upper_on_anchor) VALUES (?1, ?1, 1)",
+    "INSERT INTO schedule_versions (effective_from, effective_until, anchor_monday, upper_on_anchor) VALUES (?1, ?2, ?1, 1)",
   )
-    .bind(anchorMonday)
+    .bind(anchorMonday, effectiveUntil)
     .run();
   const versionId = Number(versionResult.meta.last_row_id);
   try {
@@ -294,11 +337,14 @@ app.post("/api/admin/:token/homework/:homeworkId/restore/:revisionId", async (co
 async function loadWeek(db: D1Database, monday: string): Promise<WeekResponse> {
   const schedule = await db
     .prepare(
-      "SELECT id, effective_from, anchor_monday, upper_on_anchor FROM schedule_versions WHERE effective_from <= ?1 ORDER BY effective_from DESC, id DESC LIMIT 1",
+      "SELECT id, effective_from, effective_until, anchor_monday, upper_on_anchor FROM schedule_versions WHERE effective_from <= ?1 ORDER BY effective_from DESC, id DESC LIMIT 1",
     )
     .bind(monday)
     .first<ScheduleVersionRow>();
   if (!schedule) return { monday, weekType: "upper", scheduleVersionId: null, lessons: [] };
+  if (schedule.effective_until && monday > schedule.effective_until) {
+    return { monday, weekType: weekTypeFor(monday, schedule.anchor_monday, Boolean(schedule.upper_on_anchor)), scheduleVersionId: schedule.id, lessons: [] };
+  }
 
   const weekType = weekTypeFor(monday, schedule.anchor_monday, Boolean(schedule.upper_on_anchor));
   const endDate = addDays(monday, 6);
@@ -331,7 +377,7 @@ async function loadWeek(db: D1Database, monday: string): Promise<WeekResponse> {
       version: row.homework_version ?? 0,
       updatedAt: row.homework_updated_at,
     },
-  }));
+  })).filter((lesson) => !schedule.effective_until || lesson.date <= schedule.effective_until);
   return { monday, weekType, scheduleVersionId: schedule.id, lessons };
 }
 
