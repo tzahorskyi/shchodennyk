@@ -350,7 +350,7 @@ async function loadWeek(db: D1Database, monday: string): Promise<WeekResponse> {
     )
     .bind(monday)
     .first<ScheduleVersionRow>();
-  if (!schedule) return { monday, weekType: "upper", scheduleVersionId: null, lessons: [] };
+  if (!schedule) return { monday, weekType: null, scheduleVersionId: null, lessons: [] };
   if (schedule.effective_until && monday > schedule.effective_until) {
     return { monday, weekType: weekTypeFor(monday, schedule.anchor_monday, Boolean(schedule.upper_on_anchor)), scheduleVersionId: schedule.id, lessons: [] };
   }

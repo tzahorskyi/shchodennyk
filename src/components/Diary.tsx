@@ -70,8 +70,8 @@ export function Diary({ guestToken, adminToken, embedded = false }: DiaryProps) 
       <section className="week-heading" aria-labelledby="week-title">
         <button className="round-button" onClick={() => moveWeek(-1)} aria-label="Попередній тиждень"><ArrowLeft /></button>
         <div>
-          <p className={`week-ribbon week-ribbon--${week?.weekType ?? "upper"}`}>
-            {week?.weekType === "lower" ? "нижній тиждень" : "верхній тиждень"}
+          <p className={week?.weekType ? `week-ribbon week-ribbon--${week.weekType}` : "week-ribbon"}>
+            {week?.weekType === "lower" ? "нижній тиждень" : week?.weekType === "upper" ? "верхній тиждень" : loading ? "завантажуємо розклад…" : "тиждень не налаштовано"}
           </p>
           <h1 id="week-title">{formatRange(monday, rangeEnd)}</h1>
           {monday !== mondayOf(today) && (

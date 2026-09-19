@@ -10,8 +10,11 @@
 npm install
 cp .dev.vars.example .dev.vars
 npm run db:migrate:local
+npm run db:seed:local
 npm run worker:dev
 ```
+
+`db:seed:local` додає демонстраційні upper/lower тижні та приклад домашнього завдання лише в локальну D1.
 
 Для готового локального файла `.dev.vars` тестові адреси такі:
 

@@ -37,7 +37,7 @@ export interface LessonOccurrence {
 
 export interface WeekResponse {
   monday: string;
-  weekType: WeekType;
+  weekType: WeekType | null;
   scheduleVersionId: number | null;
   lessons: LessonOccurrence[];
 }
