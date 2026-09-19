@@ -32,6 +32,17 @@ npm run worker:dev
 7. Додати п'ять секретів командами `npx wrangler secret put GUEST_TOKEN`, `ADMIN_TOKEN`, `PIN_PEPPER`, `ADMIN_PIN_HASH` і `SESSION_SECRET`.
 8. Запустити `npm run deploy`. Wrangler покаже безкоштовну адресу `*.workers.dev`.
 
+## Автоматичний production deploy
+
+Репозиторій підключений до GitHub Actions. Кожен push у `main` запускає тести, typecheck, production build, застосування віддалених D1-міграцій і deploy Worker.
+
+У Secrets репозиторію мають бути задані:
+
+- `CLOUDFLARE_ACCOUNT_ID` — ID акаунта Cloudflare.
+- `CLOUDFLARE_API_TOKEN` — окремий API token з правом Workers Editor для цього Worker.
+
+Pull request проходить перевірки, але не деплоїться.
+
 ## Перевірки
 
 ```bash

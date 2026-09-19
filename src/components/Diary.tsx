@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { addDays, mondayOf } from "../../shared/calendar";
 import type { LessonOccurrence, WeekResponse } from "../../shared/types";
 import { api } from "../lib/api";
+import { createLatestRequestGuard } from "../lib/requestGuard";
 import { ArrowLeft, ArrowRight, BookOpen, Clock, Pencil, Pin, User } from "./Icons";
 import { HomeworkDialog } from "./HomeworkDialog";
 
@@ -22,22 +23,32 @@ export function Diary({ guestToken, adminToken, embedded = false }: DiaryProps) 
   const [editing, setEditing] = useState<LessonOccurrence | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const weekRequestGuard = useRef(createLatestRequestGuard());
 
   const loadWeek = useCallback(async () => {
+    const request = weekRequestGuard.current.start();
     setLoading(true);
     setError("");
     try {
-      const result = await api<WeekResponse>(`/api/guest/${encodeURIComponent(guestToken)}/week?monday=${monday}`);
+      const result = await api<WeekResponse>(`/api/guest/${encodeURIComponent(guestToken)}/week?monday=${monday}`, {
+        signal: request.signal,
+      });
+      if (!request.isCurrent()) return;
       setWeek(result);
     } catch (caught) {
+      if (!request.isCurrent()) return;
       setError(caught instanceof Error ? caught.message : "Не вдалося завантажити розклад.");
     } finally {
-      setLoading(false);
+      if (request.isCurrent()) {
+        request.release();
+        setLoading(false);
+      }
     }
   }, [guestToken, monday]);
 
   useEffect(() => {
     void loadWeek();
+    return () => weekRequestGuard.current.cancel();
   }, [loadWeek]);
 
   const moveWeek = (amount: number) => setMonday((current) => addDays(current, amount * 7));

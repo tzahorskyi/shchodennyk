@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { HomeworkData, HomeworkRevision, LessonOccurrence } from "../../shared/types";
 import { ApiError, api } from "../lib/api";
+import { createLatestRequestGuard, createSingleFlightGuard } from "../lib/requestGuard";
 import { Close, History, Pencil } from "./Icons";
 
 export function HomeworkDialog({ lesson, guestToken, adminToken, onClose, onSaved }: {
@@ -17,25 +18,35 @@ export function HomeworkDialog({ lesson, guestToken, adminToken, onClose, onSave
   const [error, setError] = useState("");
   const [conflict, setConflict] = useState<HomeworkData | null>(null);
   const [revisions, setRevisions] = useState<HomeworkRevision[] | null>(null);
+  const mutationGuard = useRef(createSingleFlightGuard());
+  const historyRequestGuard = useRef(createLatestRequestGuard());
 
   useEffect(() => {
     const dialog = dialogRef.current;
     dialog?.showModal();
-    return () => dialog?.close();
+    return () => {
+      mutationGuard.current.cancel();
+      historyRequestGuard.current.cancel();
+      dialog?.close();
+    };
   }, []);
 
   async function save() {
+    const request = mutationGuard.current.start();
+    if (!request) return;
     setSaving(true);
     setError("");
     setConflict(null);
     try {
       const saved = await api<HomeworkData>(
         `/api/guest/${encodeURIComponent(guestToken)}/homework/${lesson.id}/${lesson.date}`,
-        { method: "PATCH", body: JSON.stringify({ content, version: homework.version }) },
+        { method: "PATCH", body: JSON.stringify({ content, version: homework.version }), signal: request.signal },
       );
+      if (!request.isCurrent()) return;
       setHomework(saved);
       onSaved();
     } catch (caught) {
+      if (!request.isCurrent()) return;
       if (caught instanceof ApiError && caught.status === 409) {
         const data = caught.data as { current?: HomeworkData | null } | undefined;
         setConflict(data?.current ?? { id: null, content: "", version: 0, updatedAt: null });
@@ -43,33 +54,59 @@ export function HomeworkDialog({ lesson, guestToken, adminToken, onClose, onSave
         setError(caught instanceof Error ? caught.message : "Не вдалося зберегти.");
       }
     } finally {
-      setSaving(false);
+      if (request.isCurrent()) {
+        request.release();
+        setSaving(false);
+      }
     }
   }
 
   async function loadHistory() {
     if (!adminToken || !homework.id) return;
+    const request = historyRequestGuard.current.start();
     setError("");
     try {
       const result = await api<{ revisions: HomeworkRevision[] }>(
         `/api/admin/${encodeURIComponent(adminToken)}/revisions/${homework.id}`,
+        { signal: request.signal },
       );
+      if (!request.isCurrent()) return;
       setRevisions(result.revisions);
     } catch (caught) {
+      if (!request.isCurrent()) return;
       setError(caught instanceof Error ? caught.message : "Не вдалося відкрити історію.");
+    } finally {
+      if (request.isCurrent()) request.release();
     }
   }
 
   async function restore(revision: HomeworkRevision) {
     if (!adminToken || !homework.id) return;
+    const request = mutationGuard.current.start();
+    if (!request) return;
     setSaving(true);
+    setError("");
     try {
-      await api(`/api/admin/${encodeURIComponent(adminToken)}/homework/${homework.id}/restore/${revision.id}`, { method: "POST" });
+      await api(`/api/admin/${encodeURIComponent(adminToken)}/homework/${homework.id}/restore/${revision.id}`, {
+        method: "POST",
+        body: JSON.stringify({ version: homework.version }),
+        signal: request.signal,
+      });
+      if (!request.isCurrent()) return;
       onSaved();
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Не вдалося відновити версію.");
+      if (!request.isCurrent()) return;
+      if (caught instanceof ApiError && caught.status === 409) {
+        const data = caught.data as { current?: HomeworkData | null } | undefined;
+        setConflict(data?.current ?? { id: null, content: "", version: 0, updatedAt: null });
+      } else {
+        setError(caught instanceof Error ? caught.message : "Не вдалося відновити версію.");
+      }
     } finally {
-      setSaving(false);
+      if (request.isCurrent()) {
+        request.release();
+        setSaving(false);
+      }
     }
   }
 

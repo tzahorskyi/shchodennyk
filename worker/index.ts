@@ -303,6 +303,8 @@ app.post("/api/admin/:token/homework/:homeworkId/restore/:revisionId", async (co
   }
   const homeworkId = requirePositiveInteger(context.req.param("homeworkId"));
   const revisionId = requirePositiveInteger(context.req.param("revisionId"));
+  const body = await context.req.json<{ version?: unknown }>().catch(() => null);
+  const requestedVersion = body?.version === undefined ? null : requireNonNegativeInteger(body.version);
   const current = await context.env.DB.prepare(
     "SELECT id, content, version, updated_at FROM homework WHERE id = ?1",
   )
@@ -314,18 +316,25 @@ app.post("/api/admin/:token/homework/:homeworkId/restore/:revisionId", async (co
     .bind(revisionId, homeworkId)
     .first<{ id: number; content: string; version: number }>();
   if (!current || !revision) return context.json({ error: "Версію не знайдено." }, 404);
+  const expectedVersion = requestedVersion ?? current.version;
+  if (requestedVersion !== null && current.version !== expectedVersion) {
+    return context.json({ error: "Це завдання вже змінили.", current: toHomework(current) }, 409);
+  }
 
   const nextVersion = current.version + 1;
-  await context.env.DB.batch([
-    context.env.DB
-      .prepare("INSERT INTO homework_revisions (homework_id, content, version) VALUES (?1, ?2, ?3)")
-      .bind(homeworkId, current.content, current.version),
+  const results = await context.env.DB.batch([
     context.env.DB
       .prepare(
-        "UPDATE homework SET content = ?1, version = ?2, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = ?3",
+        "UPDATE homework SET content = ?1, version = ?2, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ', 'now') WHERE id = ?3 AND version = ?4",
       )
-      .bind(revision.content, nextVersion, homeworkId),
+      .bind(revision.content, nextVersion, homeworkId, expectedVersion),
+    context.env.DB
+      .prepare("INSERT INTO homework_revisions (homework_id, content, version) SELECT ?1, ?2, ?3 WHERE changes() = 1")
+      .bind(homeworkId, current.content, current.version),
   ]);
+  if (Number(results[0].meta.changes) !== 1) {
+    return homeworkConflictById(context.env.DB, homeworkId, context);
+  }
   const restored = await context.env.DB.prepare(
     "SELECT id, content, version, updated_at FROM homework WHERE id = ?1",
   )
@@ -543,6 +552,18 @@ async function homeworkConflict(
   const current = await db
     .prepare("SELECT id, content, version, updated_at FROM homework WHERE lesson_template_id = ?1 AND lesson_date = ?2")
     .bind(lessonId, date)
+    .first<HomeworkRow>();
+  return context.json({ error: "Це завдання вже змінили.", current: current ? toHomework(current) : null }, 409);
+}
+
+async function homeworkConflictById(
+  db: D1Database,
+  homeworkId: number,
+  context: { json: (body: unknown, status: 409) => Response },
+): Promise<Response> {
+  const current = await db
+    .prepare("SELECT id, content, version, updated_at FROM homework WHERE id = ?1")
+    .bind(homeworkId)
     .first<HomeworkRow>();
   return context.json({ error: "Це завдання вже змінили.", current: current ? toHomework(current) : null }, 409);
 }
