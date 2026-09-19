@@ -3,7 +3,7 @@ dist/
 .wrangler/
 .dev.vars
 output/
+.playwright-cli/
 *.pdf
 *.png
 .DS_Store
-
