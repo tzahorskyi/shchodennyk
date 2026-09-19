@@ -40,9 +40,11 @@ export async function parseSchedulePdfs(files: File[]): Promise<ParsedPdfResult[
 }
 
 export async function parseSchedulePdf(file: File): Promise<ParsedPdfResult> {
-  const pdfjs = await import("pdfjs-dist");
+  // The legacy bundle includes the small platform polyfills needed by older
+  // iOS Safari versions (notably Promise.withResolvers used by PDF.js 6).
+  const pdfjs = await import("pdfjs-dist/legacy/build/pdf.mjs");
   pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-    "pdfjs-dist/build/pdf.worker.min.mjs",
+    "pdfjs-dist/legacy/build/pdf.worker.min.mjs",
     import.meta.url,
   ).toString();
   const data = new Uint8Array(await file.arrayBuffer());

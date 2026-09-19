@@ -59,7 +59,8 @@ export function AdminApp({ adminToken }: { adminToken: string }) {
     );
   }
 
-  const guestToken = session.guestPath?.split("/").filter(Boolean).at(-1) ?? "";
+  const guestPathParts = session.guestPath?.split("/").filter(Boolean) ?? [];
+  const guestToken = guestPathParts[guestPathParts.length - 1] ?? "";
   const fullGuestUrl = `${window.location.origin}${session.guestPath}`;
 
   return (

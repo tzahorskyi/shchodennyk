@@ -25,11 +25,11 @@ export function PdfImporter({ adminToken, onPublished }: { adminToken: string; o
     const groups: Array<{ key: string; weekType: LessonDraft["weekType"]; weekday: number; rows: Array<{ lesson: LessonDraft; index: number }> }> = [];
     lessons.forEach((lesson, index) => {
       const key = `${lesson.weekType}-${lesson.weekday}`;
-      const current = groups.at(-1);
+      const current = groups[groups.length - 1];
       if (!current || current.key !== key) {
         groups.push({ key, weekType: lesson.weekType, weekday: lesson.weekday, rows: [] });
       }
-      groups.at(-1)?.rows.push({ lesson, index });
+      groups[groups.length - 1]?.rows.push({ lesson, index });
     });
     return groups;
   }, [lessons]);
